@@ -1,0 +1,15 @@
+.progress__step {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  @for $i from 1 through 5 {
+    &.progress__step--#{$i} {
+      left: calc(#{$i * 20}vw - 9px);
+    }
+  }
+}

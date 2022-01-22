@@ -1,0 +1,4 @@
+OPEN A NEW GIT TERMINAL FROM PRESENT LOCATION
+
+code ~/.bash_profile
+alias nw='start "" "C:\Program Files\Git\git-bash.exe"'
