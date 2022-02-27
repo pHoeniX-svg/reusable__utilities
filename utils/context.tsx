@@ -23,9 +23,9 @@ function countReducer(state: State, action: Action) {
 
 function CountProvider({children}: CountProviderProps) {
   const [state, dispatch] = React.useReducer(countReducer, {count: 0})
-  // NOTE: you *might* need to memoize this value
+//   NOTE: you *might* need to memoize this value
   // Learn more in http://kcd.im/optimize-context
-  const value = {state, dispatch}
+  const value = React.useMemo(() => [count, setCount], [count])
   return (
     <CountStateContext.Provider value={value}>
       {children}
