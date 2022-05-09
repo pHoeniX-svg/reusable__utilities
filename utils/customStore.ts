@@ -16,6 +16,10 @@ function createStore<T, A>(reducer: (state: T, action: A) => T) {
     },
     subscribe(listener: Listener) {
       listeners.push(listener);
+      return function unsubscribe() {
+        const idx = listeners.indexOf(listener)
+        listeners.splice(idx, 1)
+      }
     },
   };
 }
